@@ -3,7 +3,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 //  typer Artist
 export interface IArtist extends Document {
   name: string;
-  genre: string;
+  genre?: string;
   bio?: string; 
   songs: string[]; 
 }

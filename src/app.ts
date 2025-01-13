@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const app : Express = express();
 const port : number = 3000;
 
-mongoose.connect('mongodb://localhost:2707/')
+mongoose.connect('mongodb://127.0.0.1:27017/spotiflyy')
 .then(() => {
   console.log("Connecté à MongoDB avec succès !");
 })
