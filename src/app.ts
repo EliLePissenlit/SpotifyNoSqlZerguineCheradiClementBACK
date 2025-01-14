@@ -1,9 +1,14 @@
 import express, { Request, Response, Express } from "express";
 import mongoose from "mongoose"; 
+import songRoutes from "./routes/songRoutes";
+
 
 
 const app : Express = express();
 const port : number = 3000;
+
+app.use(express.json());
+
 
 mongoose.connect('mongodb://127.0.0.1:27017/spotiflyy')
 .then(() => {
@@ -13,9 +18,12 @@ mongoose.connect('mongodb://127.0.0.1:27017/spotiflyy')
   console.error("Erreur de connexion à MongoDB :", err);
 });
 
+// Routes
 app.get("/", (req: Request, res: Response) => {
   res.send("coucou");
 });
+
+app.use("/api/songs", songRoutes);
 
 
 

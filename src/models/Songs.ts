@@ -6,7 +6,7 @@ export interface ISong extends Document {
   duration?: number; 
   artistIds: string[]; 
   albumId?: string; 
-  genre: string;
+  genre?: string;
 }
 
 // Schéma 
