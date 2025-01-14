@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import songRoutes from "./routes/songRoutes";
 import userRoutes from "./routes/userRoutes";
 import artistRoutes from "./routes/artistRoutes";
+import playlistRoutes from "./routes/playlistRoutes";
+
 
 
 
@@ -31,6 +33,8 @@ app.use("/api/songs", songRoutes);
 app.use("/api/user", userRoutes);
 
 app.use("/api/artists", artistRoutes);
+
+app.use("/api/playlists", playlistRoutes);
 
 
 
