@@ -2,6 +2,8 @@ import express, { Request, Response, Express } from "express";
 import mongoose from "mongoose"; 
 import songRoutes from "./routes/songRoutes";
 import userRoutes from "./routes/userRoutes";
+import artistRoutes from "./routes/artistRoutes";
+
 
 
 
@@ -25,7 +27,11 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api/songs", songRoutes);
+
 app.use("/api/user", userRoutes);
+
+app.use("/api/artists", artistRoutes);
+
 
 
 

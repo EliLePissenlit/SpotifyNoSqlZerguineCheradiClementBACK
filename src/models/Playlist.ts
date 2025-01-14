@@ -5,7 +5,7 @@ export interface IPlaylist extends Document {
   name: string;
   description?: string; // je met ? quand je veux que ca soit optionelle 
   userId: string; 
-  songs: string[]; 
+  songs?: string[]; 
 }
 
 // Schéma 
