@@ -1,7 +1,7 @@
-import express, { Request, Response } from "express";
+import { Request, Response, Router } from "express";
 import User from '../models/User';
 
-const router = express.Router();
+const router = Router();
 
 router.post('/register', async (req: Request, res: Response) => {
   try {
@@ -19,17 +19,5 @@ router.post('/register', async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Failed to register user' });
   }
 });
-
-router.post("/register", async (req: Request, res: Response) => {
-    try {
-        const { username, email, password } = req.body;
-
-      console.log(req.body);
-      res.status(200).send("Log OK");
-    } catch (err) {
-      res.status(500).send("Error");
-    }
-  });
-  
 
 export default router;
