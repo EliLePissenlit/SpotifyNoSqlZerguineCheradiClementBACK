@@ -1,5 +1,6 @@
 import express, { Request, Response, Express } from "express";
 import mongoose from "mongoose"; 
+import cors from "cors";
 import songRoutes from "./routes/songRoutes";
 import userRoutes from "./routes/userRoutes";
 import artistRoutes from "./routes/artistRoutes";
@@ -14,6 +15,13 @@ const port : number = 3000;
 
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "http://localhost:5173", 
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    credentials: true, 
+  })
+);
 
 mongoose.connect('mongodb://127.0.0.1:27017/spotiflyy')
 .then(() => {
