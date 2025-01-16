@@ -5,6 +5,8 @@ import songRoutes from "./routes/songRoutes";
 import userRoutes from "./routes/userRoutes";
 import artistRoutes from "./routes/artistRoutes";
 import playlistRoutes from "./routes/playlistRoutes";
+import searchRoutes from "./routes/searchRoutes";
+
 
 
 
@@ -43,6 +45,9 @@ app.use("/api/user", userRoutes);
 app.use("/api/artists", artistRoutes);
 
 app.use("/api/playlists", playlistRoutes);
+
+app.use("/api/search", searchRoutes);
+
 
 
 

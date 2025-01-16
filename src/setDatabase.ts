@@ -35,14 +35,14 @@ const seedDatabase = async () => {
     const song1 = await Song.create({
       title: "Break up with your girlfriend",
       duration: 231, 
-      artistIds: [artist1._id], // ref à ariana 
+      artistIds: [artist1._id],  
       genre: "Pop",
     });
 
     const song2 = await Song.create({
       title: "Please don't humble me",
       duration: 240, 
-      artistIds: [artist2._id], // ref à artemas
+      artistIds: [artist2._id], 
       genre: "Pop-Rock",
     });
     console.log("Chansons ajoutées :", song1, song2);
@@ -51,8 +51,8 @@ const seedDatabase = async () => {
     const playlist = await Playlist.create({
       name: "My Favorites",
       description: "A collection of my favorite songs",
-      userId: user._id, // Référence à l'utilisateur johndoe
-      songs: [song1._id, song2._id], // Références aux chansons
+      userId: user._id, 
+      songs: [song1._id, song2._id], 
     });
     console.log("Playlist ajoutée :", playlist);
 

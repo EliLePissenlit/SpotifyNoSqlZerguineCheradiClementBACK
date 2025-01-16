@@ -13,7 +13,7 @@ const ArtistSchema: Schema = new Schema({
   name: { type: String, required: true, unique: true },
   genre: { type: String, required: true },
   bio: { type: String }, 
-  songs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Song' }], // Références aux chansons
+  songs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Song' }], 
 });
 
 // Exporter 
