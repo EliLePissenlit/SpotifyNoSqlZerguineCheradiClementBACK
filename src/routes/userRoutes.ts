@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express";
 import User from '../models/User';
 import bcrypt from "bcryptjs";
+import authMiddleware from "../middlewares/authMiddlesware";
 
 const router = Router();
 
@@ -65,5 +66,19 @@ router.post('/login', async (req: Request, res: Response) => {
           res.status(500).json({ error: 'Failed to delete user' });
         }
       });
+
+      // me
+
+      router.get('/me', authMiddleware, async (req: Request, res: Response) => {
+        try {
+          const user = await User.findById((req as any).user._id).select('-password'); 
+          if (!user) return res.status(404).json({ message: 'Utilisateur non trouvé' });
+      
+          res.status(200).json({ user });
+        } catch (err) {
+          res.status(500).json({ message: 'Erreur serveur' });
+        }
+      });
+      
 
 export default router;
